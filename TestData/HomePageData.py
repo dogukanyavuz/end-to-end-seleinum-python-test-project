@@ -12,7 +12,7 @@ class HomePageData:
                            "password": "232323",
                            "gender": "Female"}]
 
-    @staticmethod  # we don't need to create an object of the class to reach this method now
+    @staticmethod  # we don't need to create an object of the class to reach this method now.
     def getTestData(test_case_name):  # we can remove self too after typing @staticmethod
         Dict = {}
 
