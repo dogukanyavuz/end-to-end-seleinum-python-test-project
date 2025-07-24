@@ -20,7 +20,7 @@ class HomePageData:
         # The file is located on the user's desktop. The workbook can then be accessed for reading or modifying data.
         book = openpyxl.load_workbook("/Users/dogukanyavuz/Documents/PythonDemo.xlsx")
 
-        # we got the active sheet
+        # we got the active sheet.
         sheet = book.active
 
         for i in range(1, sheet.max_row + 1):
