@@ -11,7 +11,6 @@ from selenium.webdriver.support import expected_conditions
 from pageObjects.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
-
 # @pytest.mark.usefixtures("setup")
 # instead of using pytest, we created BaseClass and gave it the knowledge of fixture
 # BaseClass now has the knowledge of fixture, that's why we can remove it from here and just inherit it
@@ -33,16 +32,16 @@ class TestOne(BaseClass):
         # clicking on the element and creating an object for next class is inside "shopItems()"
         checkoutPageObject = homePage.shopItems()
 
-        #product_list = self.driver.find_elements(By.XPATH, "//app-card[contains(@class,'mb-3')]")
+        # product_list = self.driver.find_elements(By.XPATH, "//app-card[contains(@class,'mb-3')]")
         product_list = homePage.getProductList()
-        #checkoutPage = CheckoutPage(self.driver)
+        # checkoutPage = CheckoutPage(self.driver)
 
         for products in product_list:
-            #element_text = products.find_element(By.XPATH, "div/div/h4/a").text  # chained with 33'th line
+            # element_text = products.find_element(By.XPATH, "div/div/h4/a").text  # chained with 33'th line
             element_text = homePage.getProductText(products)
             log.info(element_text)
             if element_text == "Blackberry":
-                #products.find_element(By.XPATH, "div/div/button").click()  # chained with 33'th line
+                # products.find_element(By.XPATH, "div/div/button").click()  # chained with 33'th line
                 log.info(element_text)
                 homePage.getProductButton(products).click()
                 break

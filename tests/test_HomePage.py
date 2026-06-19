@@ -18,17 +18,17 @@ class TestHomePage(BaseClass):
 
         # ID, XPATH, CSSSelector, Class name, Name, linkText
         homepage.getName().send_keys(getData["firstname"])
-        log.info("getting the first name: "+getData["firstname"])
+        log.info("getting the first name: " + getData["firstname"])
 
         homepage.getEmail().send_keys(getData["email"])  # textbox
-        log.info("getting the email: "+getData["email"])
+        log.info("getting the email: " + getData["email"])
 
         homepage.getPassword().send_keys(getData["password"])  # textbox
-        log.info("getting the password: "+getData["password"])
+        log.info("getting the password: " + getData["password"])
 
         homepage.getCheckbox().click()  # checkbox
         self.selectOptionByText(homepage.getDropdown(), getData["gender"])
-        log.info("selecting from dropdown: "+getData["gender"])
+        log.info("selecting from dropdown: " + getData["gender"])
 
         homepage.getSubmit().click()
         message = homepage.getMessage().text
